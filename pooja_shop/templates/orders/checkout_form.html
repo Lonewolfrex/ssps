@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Shipping Details</h2>
+<form method="post">
+  {% csrf_token %}
+  <div class="grid">
+    <label>Name <input name="name" required></label>
+    <label>Phone <input name="phone" required></label>
+  </div>
+  <label>Address Line 1 <input name="line1" required></label>
+  <div class="grid">
+    <label>City <input name="city" required></label>
+    <label>State <input name="state" required></label>
+    <label>Pincode <input name="pincode" required></label>
+  </div>
+  <button type="submit">Place Order</button>
+</form>
+{% endblock %}

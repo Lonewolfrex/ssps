@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Order Placed!</h2>
+<p>Your order #{{ order.id }} has been created with total amount ₹ {{ order.total_amount }}.</p>
+<p>Status: {{ order.status }}</p>
+
+<details>
+  <summary>Pay with Google Pay (UPI)</summary>
+  <p>Tap the button below to open Google Pay with the exact amount. After payment, your order will move to <em>Paid</em> once verified.</p>
+  <a role="button" href="upi://pay?pa={{ settings.UPI_VPA }}&pn={{ settings.UPI_NAME|urlencode }}&am={{ order.total_amount }}&cu=INR&tn=Order%20{{ order.id }}" target="_blank">Pay via Google Pay</a>
+  <p><small>Note: Set <code>UPI_VPA</code> and <code>UPI_NAME</code> in your <code>.env</code> for production.</small></p>
+</details>
+
+<p><a href="/">Back to Home</a></p>
+{% endblock %}

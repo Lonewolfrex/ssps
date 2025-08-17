@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Satvik Sparsh Pooja Store</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <style>
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    header nav ul{align-items:center}
+    .badge{background:#eee;border-radius:999px;padding:.2rem .6rem;font-size:.8rem}
+  </style>
+
+<style>
+  :root{
+    --brand:#ffc766; /* light saffron */
+    --brand-strong:#ffb347;
+    --brand-text:#5a2a00;
+  }
+  header .brandbar{
+    background:var(--brand);
+    border-radius: 12px;
+    padding:.6rem 1rem;
+    display:flex; align-items:center; gap:.6rem;
+  }
+  header .brandbar img{height:38px; width:auto; border-radius:6px}
+  header .brandbar .title{font-weight:700; color:var(--brand-text)}
+  a[role="button"], button, .contrast button{
+    background: var(--brand-strong);
+    border-color: var(--brand-strong);
+  }
+  .badge{background:var(--brand); color:var(--brand-text)}
+  .product-grid img{max-height:180px; object-fit:cover; width:100%}
+</style>
+</head>
+
+<body>
+  <header class="container">
+    <nav>
+      <ul>
+        <li><strong><a href="/">🪔 Satvik Sparsh</a></strong></li>
+      </ul>
+      <ul>
+        <li><a href="/shop/">Shop</a></li>
+        <li><a href="/shop/cart/">Cart <span class="badge">{{ cart_item_count }}</span></a></li>
+        <li><a href="/expenses/dashboard/">Admin</a></li>
+        {% if request.user.is_authenticated %}
+          <li>Hello, {{ request.user.username }}</li>
+          <li><a href="/admin/">Django Admin</a></li>
+          <li><a href="/logout/">Logout</a></li>
+        {% else %}
+          <li><a href="/admin/login/?next=/">Login</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    {% for m in messages %}
+    <article class="contrast">{{ m }}</article>
+    {% endfor %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="container">
+    <small>© {{ now|date:"Y" }} Pooja Shop • Made with Django</small>
+  </footer>
+</body>
+</html>

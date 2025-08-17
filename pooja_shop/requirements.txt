@@ -1,0 +1,6 @@
+Django>=4.2,<5.3
+djangorestframework>=3.14
+Pillow>=10.0
+razorpay>=1.4.2
+whitenoise>=6.5
+python-dotenv>=1.0.1
