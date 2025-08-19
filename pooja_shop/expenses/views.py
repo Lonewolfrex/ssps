@@ -35,3 +35,4 @@ def expense_add(request):
         messages.success(request, 'Expense logged')
         return redirect('expenses_dashboard')
     return render(request, 'expenses/expense_add.html')
+

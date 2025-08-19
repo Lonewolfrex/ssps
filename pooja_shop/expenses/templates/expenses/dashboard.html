@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📊 Expenses Dashboard</h2>
+
+<section class="dashboard">
+  <div class="card">
+    <h3>Total Expenses</h3>
+    <p>₹{{ total_expenses }}</p>
+  </div>
+
+  <div class="card">
+    <h3>Monthly Breakdown</h3>
+    <ul>
+      {% for month, amount in monthly_expenses.items %}
+        <li>{{ month }}: ₹{{ amount }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Recent Expenses</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for expense in expenses %}
+          <tr>
+            <td>{{ expense.category }}</td>
+            <td>₹{{ expense.amount }}</td>
+            <td>{{ expense.date|date:"M d, Y" }}</td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="3">No expenses recorded.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

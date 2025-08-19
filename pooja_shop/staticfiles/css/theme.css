@@ -1,0 +1,35 @@
+:root {
+  --brand: #ffc766;        /* light saffron */
+  --brand-strong: #ffb347; /* deeper saffron */
+  --brand-text: #5a2a00;   /* earthy brown */
+}
+
+header .brandbar {
+  background: var(--brand);
+  border-radius: 12px;
+  padding: .6rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+header .brandbar img {
+  height: 38px;
+  width: auto;
+  border-radius: 6px;
+}
+
+header .brandbar .title {
+  font-weight: 700;
+  color: var(--brand-text);
+}
+
+a[role="button"], button, .contrast button {
+  background: var(--brand-strong);
+  border-color: var(--brand-strong);
+}
+
+.badge {
+  background: var(--brand);
+  color: var(--brand-text);
+}

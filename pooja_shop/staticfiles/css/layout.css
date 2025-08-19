@@ -1,0 +1,23 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.product-grid img {
+  max-height: 180px;
+  object-fit: cover;
+  width: 100%;
+}
+
+header nav ul {
+  align-items: center;
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--brand);
+  text-align: center;
+  color: var(--brand-text);
+}

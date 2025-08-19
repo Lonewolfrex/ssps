@@ -1,0 +1,72 @@
+/* Theme colors */
+:root {
+  --brand: #ffc766;       /* light saffron */
+  --brand-strong: #ffb347; /* deep saffron */
+  --brand-text: #5a2a00;  /* earthy brown */
+}
+
+/* Header branding */
+header .brandbar {
+  background: var(--brand);
+  border-radius: 12px;
+  padding: .6rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+header .brandbar img {
+  height: 38px;
+  width: auto;
+  border-radius: 6px;
+}
+
+header .brandbar .title {
+  font-weight: 700;
+  color: var(--brand-text);
+}
+
+/* Navigation */
+header nav ul {
+  align-items: center;
+}
+
+/* Buttons */
+a[role="button"], 
+button, 
+.contrast button {
+  background: var(--brand-strong);
+  border-color: var(--brand-strong);
+}
+
+/* Badge */
+.badge {
+  background: var(--brand);
+  color: var(--brand-text);
+  border-radius: 999px;
+  padding: .2rem .6rem;
+  font-size: .8rem;
+}
+
+/* Product grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.product-grid img {
+  max-height: 180px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  background: var(--brand);
+  color: var(--brand-text);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+}

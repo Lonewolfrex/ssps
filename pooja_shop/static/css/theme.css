@@ -1,0 +1,33 @@
+/* static/css/theme.css */
+
+/* Global Theme */
+:root {
+  --saffron: #FF9933;   /* Saffron orange */
+  --green: #138808;     /* Indian green */
+  --white: #FFFFFF;
+  --gray: #f8f9fa;
+  --dark: #222;
+  --accent: #FFD580;    /* Light saffron shade */
+  --radius: 8px;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--gray);
+  margin: 0;
+  padding: 0;
+  color: var(--dark);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--saffron);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--green);
+}
